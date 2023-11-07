@@ -6,9 +6,11 @@ on:
       - main
 
 jobs:
-  test:
-    name: Run Tests
-    runs-on: Windows-latest
+  generate_text:
+    name: Generate Text (Windows)
+    runs-on: windows-latest
+    environment:
+      name: gentext-launch
 
     steps:
     - name: Checkout repository
@@ -17,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.10
 
     - name: Install dependencies
       run: pip install -r requirements.txt
@@ -36,11 +38,11 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.10
 
     - name: Install Dependencies
       run: |
-        pip install gen_text  
+        pip install gentext  
       shell: bash
 
     - name: Generate Text
