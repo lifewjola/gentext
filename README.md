@@ -69,7 +69,7 @@ You specify the number of training epochs (20 and above recommended). This step 
 
 ```python
 gen_model = OneStep(text, model)
-input_text = 'Tal to me'
+input_text = 'Talk to me'
 length = 1000
 gen.generate_text(gen_model, input_text, length)
 ```
